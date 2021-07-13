@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class App extends React.Component {
     state = {
-        linguagens: []
+        filmes: []
     };
 
     componentDidMount() {
@@ -10,7 +10,7 @@ class App extends React.Component {
             .then(res => res.json())
             .then(res => {
                 this.setState({
-                    linguagens: res
+                    filmes: res
                 });
             });
     }
@@ -19,9 +19,8 @@ class App extends React.Component {
         return (
             <div>
                 <h1>Lista de filmes</h1>
-
                 <ul>
-                    {this.state.linguagens.map(item => (
+                    {this.state.filmes.map(item => (
                         <li key={item.id}>
                             <p><b>Nome:</b> {item.title}</p>
                             <p><b>Genero:</b> {item.genre}</p>
